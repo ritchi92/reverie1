@@ -1,17 +1,19 @@
 package messagerie.models;
 
+import java.util.Date;
+
 public class Utilisateur extends Object {
 	private String nom ="nil";
 	private String prenom;
-	private int age;
+	private Date dNaissance;
 	
-	public Utilisateur(String nom ,String prenom, int age) {
+	public Utilisateur(String nom ,String prenom, Date dNaissance) {
 		this.nom = nom;
 		this.prenom = prenom;
-		this.age = age;
+		this.dNaissance = dNaissance;
 	}
 	public Utilisateur(String nom ,String prenom) {
-		this(nom,prenom,0);
+		this(nom,prenom,null);
 	}
 	public void afficher() {
 		System.out.println(nom+"...");
@@ -48,6 +50,10 @@ public class Utilisateur extends Object {
 		}else{
 			throw new NumberFormatException();
 		}
+	}
+	public int getAge() {
+		
+		
 	}
 		
 }//fin
