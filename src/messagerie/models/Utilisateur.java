@@ -21,7 +21,7 @@ public class Utilisateur extends Object {
 	
 	@Override
 	public 	String toString() {
-		return nom + " " + prenom + " ("+ age + " ans )";
+		return nom + " " + prenom + " ("+ dNaissance + " ans )";
 	}
 	//accesseur et mutateur
 	public String getNom() {
@@ -40,13 +40,13 @@ public class Utilisateur extends Object {
 		this.prenom=prenom;
 		}
 	
-	public int getAge() {
-		return age;
+	public int getdNaissance() {
+		return dNaissance;
 		}
 		
-	public void setAge(int age) {
+	public void setdNaissance(int age) {
 		if (age>=0 && age <=130) {
-			this.age=age;
+			this.dNaissance=dNaissance;
 		}else{
 			throw new NumberFormatException();
 		}
