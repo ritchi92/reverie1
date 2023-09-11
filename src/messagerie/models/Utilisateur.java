@@ -3,56 +3,64 @@ package messagerie.models;
 import java.util.Date;
 
 public class Utilisateur extends Object {
-	private String nom ="nil";
-	private String prenom;
-	private Date dNaissance;
+	private String firstname ;
+	private String lastname;
+	private Date bDate;
 	
-	public Utilisateur(String nom ,String prenom, Date dNaissance) {
-		this.nom = nom;
-		this.prenom = prenom;
-		this.dNaissance = dNaissance;
+	
+	
+	public Utilisateur(String firstname ,String lastname) {
+		this(firstname,lastname,null);
 	}
-	public Utilisateur(String nom ,String prenom) {
-		this(nom,prenom,null);
+	public Utilisateur(String firstname ,String lastname, Date bDate) {
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.bDate = bDate;
+	}
+	
+	public Utilisateur() {
+		this("?","?",null);
 	}
 	public void afficher() {
-		System.out.println(nom+"...");
+		System.out.println(firstname+"...");
 	}
 	
 	@Override
 	public 	String toString() {
-		return nom + " " + prenom + " ("+ dNaissance + " ans )";
+		return firstname + " " + lastname + " ("+ bDate + " ans )";
 	}
-	//accesseur et mutateur
-	public String getNom() {
-		return this.nom;
+	//accesseur et mutateur\\
+	
+	
+	public String getfirstname() {
+		return this.firstname;
 		}
 		
-	public void setNom(String nom) {
-		this.nom=nom;
+	public void setfirstname(String firstname) {
+		this.firstname=firstname;
 		}
 		
-	public String getPrenom() {
-		return this.prenom;
+	public String getlastname() {
+		return this.lastname;
 		}
 		
-	public void setPrenom(String prenom) {
-		this.prenom=prenom;
+	public void setlastname(String lastname) {
+		this.lastname=lastname;
 		}
 	
-	public int getdNaissance() {
-		return dNaissance;
+	public Date getbDate() {
+		return bDate;
 		}
 		
-	public void setdNaissance(int age) {
+	public void setbDate(int age, Date bDate) {
 		if (age>=0 && age <=130) {
-			this.dNaissance=dNaissance;
+			this.bDate=bDate;
 		}else{
 			throw new NumberFormatException();
 		}
 	}
 	public int getAge() {
-		
+		return 0;
 		
 	}
 		
